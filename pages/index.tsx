@@ -3,61 +3,29 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import {useAccount} from "wagmi";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 import {BigNumber, utils} from "ethers";
 import {IDXClient} from "../components/ceramic/IDXClient";
+import {getSeedFromAddress} from "../components/util";
 const idxClient = new IDXClient()
 
 const Home: NextPage = () => {
-
   const { address, isConnecting, isDisconnected , isConnected } = useAccount()
+  const [did,setDID] = useState(null);
+  const [refreshCount,setRefreshCount] = useState(0)
 
   useEffect(()=>{
     if(isConnected){
-      // @ts-ignore
-      const hash = utils.keccak256(address.toString());
-      console.log(hash)
-      // @ts-ignore
-      const array = hash
-          // @ts-ignore
-          .replace('0x', '')
-          // @ts-ignore
-          .match(/.{2}/g)
-          .map((hexNoPrefix) => BigNumber.from('0x' + hexNoPrefix).toNumber())
-      console.log(array)
-      const seed = JSON.parse(JSON.stringify(array));
-      idxClient.getJsDID(seed).then((did) => {
+      const seed = getSeedFromAddress(address)
+      idxClient.getJsDID(seed).then(async (did) => {
         console.log(did)
-
-        interface  UserInfo{
-          name : string,
-          sex: string,
-          location:string,
-          website:string,
-          description:string
-        }
-        const kv = {
-          "name":"test",
-          "files":[]
-        }
         // @ts-ignore
-        idxClient.writeUserInfo(kv).then(async r => {
-          const v = await idxClient.readUserInfo()
-          console.log(v)
-        })
-
-        const kv1 = {
-          "name":"test",
-          "files":["1"]
-        }
-        // @ts-ignore
-        idxClient.writeUserInfo(kv1).then(async r => {
-          const v = await idxClient.readUserInfo()
-          console.log(v)
-        })
+        setDID(did)
+        const v = await idxClient.readUserInfo()
+        console.log(v)
       })
     }
-  })
+  },[refreshCount])
 
   return (
     <div className={styles.container}>

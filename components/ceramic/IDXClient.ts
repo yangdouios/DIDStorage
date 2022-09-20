@@ -1,5 +1,7 @@
 import {WebClient} from "./clients";
 import {DID} from "dids";
+import {Ed25519Provider} from "key-did-provider-ed25519";
+import KeyDidResolver from "key-did-resolver";
 
 interface  UserInfo{
     name : string,

@@ -34,22 +34,4 @@ export class Core {
   get resolver(): Resolver {
     return this._resolver
   }
-
-  async getAlsoKnownAs(id: string): Promise<AlsoKnownAs | null> {
-    try {
-      return await this._idx.get<AlsoKnownAs>('alsoKnownAs', id)
-    } catch (err) {
-      console.warn('Failed to load AKA accounts', id, err)
-      return null
-    }
-  }
-
-  async getProfile(id: string): Promise<BasicProfile | null> {
-    try {
-      return await this._idx.get<BasicProfile>('basicProfile', id)
-    } catch (err) {
-      console.warn('Failed to load profile', id, err)
-      return null
-    }
-  }
 }

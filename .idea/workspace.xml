@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="add ceramic &amp; did &amp; 3dbox">
+    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="optimize code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ceramic/IDXClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ceramic/IDXClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ceramic/clients.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ceramic/clients.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ceramic/config.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ceramic/core.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ceramic/core.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -77,7 +77,7 @@
       <updated>1663595878668</updated>
       <workItem from="1663595883058" duration="9648000" />
       <workItem from="1663679585246" duration="95000" />
-      <workItem from="1663679848190" duration="2220000" />
+      <workItem from="1663679848190" duration="8095000" />
     </task>
     <task id="LOCAL-00001" summary="add ceramic &amp; did &amp; 3dbox">
       <created>1663680316268</created>
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663680316268</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="optimize code">
+      <created>1663682186775</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663682186775</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add ceramic &amp; did &amp; 3dbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ceramic &amp; did &amp; 3dbox" />
+    <MESSAGE value="optimize code" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimize code" />
   </component>
 </project>
