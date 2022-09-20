@@ -1,5 +1,4 @@
 import {WebClient} from "./clients";
-import {APP_NETWORK} from "./config";
 import {DID} from "dids";
 
 interface  UserInfo{
@@ -21,21 +20,13 @@ export class IDXClient {
 
 
     createWebClient() {
-        this._webClient = new WebClient(APP_NETWORK)
+        this._webClient = new WebClient()
     }
 
     getJsDID(seed: Uint8Array): Promise<DID> {
         return this._webClient.connectByJsDID(seed)
     }
 
-    async getDID(address: string, provider: any): Promise<DID> {
-        if (!this._webClient) {
-            this.createWebClient()
-        }
-
-        const did: DID = await this._webClient.authenticateByAddress(address, provider, true)
-        return did
-    }
 
     async writeUserInfo(userInfo:UserInfo) {
         await this._webClient.idx.set('basicProfile', userInfo)
@@ -44,7 +35,6 @@ export class IDXClient {
     async addOrUpdateUserInfoMetaData(kv: any) {
         await this._webClient.idx.merge("basicProfile", kv)
     }
-
 
     async readUserInfo():Promise<{}> {
         const result = await this._webClient.idx.get('basicProfile')

@@ -2,21 +2,16 @@ import { IDX } from '@ceramicstudio/idx'
 import type { AlsoKnownAs, BasicProfile } from '@ceramicstudio/idx-constants'
 import { Resolver } from 'did-resolver'
 import KeyDidResolver from 'key-did-resolver'
-
-import { getConfig } from './config'
-import type { AppNetwork, ConfigURLs } from './config'
 import {CeramicClient} from "@ceramicnetwork/http-client";
 const API_URL = 'https://ceramic-clay.3boxlabs.com/'
 
 export class Core {
   // @ts-ignore
   _ceramic: CeramicClient
-  _config: ConfigURLs
   _idx: IDX
   _resolver: Resolver
 
-  constructor(network: AppNetwork) {
-    this._config = Object.freeze(getConfig(network))
+  constructor() {
     // @ts-ignore
     this._ceramic = new CeramicClient(API_URL)
     // @ts-ignore
@@ -31,9 +26,6 @@ export class Core {
     return this._ceramic
   }
 
-  get config(): ConfigURLs {
-    return this._config
-  }
 
   get idx(): IDX {
     return this._idx

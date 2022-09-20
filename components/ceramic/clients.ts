@@ -1,13 +1,12 @@
 import { DID } from 'dids'
-import type { AppNetwork } from './config'
 import { Core } from './core'
 import {Ed25519Provider} from "key-did-provider-ed25519";
 import KeyDidResolver from "key-did-resolver";
 
 export class WebClient extends Core {
 
-  constructor(network: AppNetwork) {
-    super(network)
+  constructor() {
+    super()
   }
 
   async connectByJsDID(seed:Uint8Array): Promise<DID>{
