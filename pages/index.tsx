@@ -4,13 +4,20 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import {useAccount} from "wagmi";
 import {useEffect, useRef, useState} from "react";
-import {BigNumber, utils} from "ethers";
 import {IDXClient} from "../components/ceramic/IDXClient";
 import {getSeedFromAddress} from "../components/util";
 const idxClient = new IDXClient()
 
 const Home: NextPage = () => {
-  const { address, isConnecting, isDisconnected , isConnected } = useAccount()
+  const { address, isConnecting, isDisconnected , isConnected } = useAccount({
+    onConnect({ address, connector, isReconnected }) {
+      console.log('Connected', { address, connector, isReconnected })
+      setRefreshCount(refreshCount+1)
+    },
+    onDisconnect() {
+      console.log('Disconnected')
+    },
+  })
   const [did,setDID] = useState(null);
   const [refreshCount,setRefreshCount] = useState(0)
 
