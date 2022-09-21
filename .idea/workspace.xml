@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="fixed useEffect looper &amp; did auth">
+    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="build file index system based ceramic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ceramic/IDXClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ceramic/IDXClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/util.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +75,7 @@
       <updated>1663595878668</updated>
       <workItem from="1663595883058" duration="9648000" />
       <workItem from="1663679585246" duration="95000" />
-      <workItem from="1663679848190" duration="28740000" />
+      <workItem from="1663679848190" duration="29998000" />
     </task>
     <task id="LOCAL-00001" summary="add ceramic &amp; did &amp; 3dbox">
       <created>1663680316268</created>
@@ -109,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663723715065</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="build file index system based ceramic">
+      <created>1663770826843</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663770826843</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +136,7 @@
     <MESSAGE value="fix useEffect looper" />
     <MESSAGE value="fix useEffect looper &amp; did auth" />
     <MESSAGE value="fixed useEffect looper &amp; did auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed useEffect looper &amp; did auth" />
+    <MESSAGE value="build file index system based ceramic" />
+    <option name="LAST_COMMIT_MESSAGE" value="build file index system based ceramic" />
   </component>
 </project>

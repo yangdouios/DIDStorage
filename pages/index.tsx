@@ -34,50 +34,78 @@ const Home: NextPage = () => {
                 console.log(did)
                 // @ts-ignore
                 setDID(did)
-                const v = await idxClient.readFiles()
-                console.log(v)
-                if(v){
-                    // @ts-ignore
-                    const cids = v['affiliation'];
-                    if(cids){
-                        setCIDs(cids)
-                    }
-                }else{
-                    setCIDs([])
-                }
+                await requestData()
             })
         }
     }, [refreshCount])
 
 
+    const requestData = async ()=>{
+        const v = await idxClient.readFiles()
+        console.log(v)
+        if(v){
+            // @ts-ignore
+            const cids = v['affiliation'];
+            if(cids){
+                setCIDs(cids)
+            }
+        }else{
+            setCIDs([])
+        }
+    }
+
     const onInputChange = async (event : any) => {
         const selectedFiles = event.target.files;
-        console.log(selectedFiles)
-        const name = selectedFiles[0].name
-        const size = selectedFiles[0].size
+        if(selectedFiles){
+            console.log(selectedFiles)
+            const name = selectedFiles[0].name
+            const size = selectedFiles[0].size
 
-        const rootCid = await client.put(selectedFiles,{wrapWithDirectory:false});
-        console.log("Successfully sent to IPFS");
-        console.log("https://" + rootCid + ".ipfs.dweb.link");
-        const cid_json = {
-            'name':name,
-            'size':size,
-            'cid':rootCid
-        }
+            const rootCid = await client.put(selectedFiles,{wrapWithDirectory:false});
+            console.log("Successfully sent to IPFS");
+            console.log("https://" + rootCid + ".ipfs.dweb.link");
+            const cid_json = {
+                'name':name,
+                'size':size,
+                'cid':rootCid
+            }
 
-        if(cids){
-            const result = {
-                'affiliation' : [...cids,cid_json]
+            if(cids){
+                const result = {
+                    'affiliation' : [...cids,cid_json]
+                }
+                // @ts-ignore
+                await idxClient.writeUserInfo(result)
+            }else{
+                const result = {
+                    'affiliation' : [cid_json]
+                }
+                // @ts-ignore
+                await idxClient.writeUserInfo(result)
             }
-            // @ts-ignore
-            await idxClient.writeUserInfo(result)
-        }else{
-            const result = {
-                'affiliation' : [cid_json]
-            }
-            // @ts-ignore
-            await idxClient.writeUserInfo(result)
+            await requestData()
         }
+    }
+
+    const deleteCid = async (v:any) =>{
+        const deleteCid = v.cid;
+        // @ts-ignore
+        let copyCids = []
+        cids.forEach((cidJson)=>{
+            const cid = cidJson['cid']
+            if( deleteCid != cid){
+                copyCids.push(cidJson)
+            }
+        })
+        // @ts-ignore
+        console.log(copyCids)
+        // @ts-ignore
+        const result = {
+            'affiliation' : copyCids
+        }
+        // @ts-ignore
+        await idxClient.writeUserInfo(result)
+        await requestData()
     }
 
     // @ts-ignore
@@ -152,9 +180,9 @@ const Home: NextPage = () => {
                                                 {reptile.cid}
                                             </Text>
 
-                                            <Text  onClick={()=>{}} color={'black'}>
-                                                {'view detail'}
-                                            </Text>
+                                            <Button  onClick={()=>{deleteCid(reptile)}} color={'black'}>
+                                                {'delete'}
+                                            </Button>
                                         </Flex>
 
                                     </ListItem>
