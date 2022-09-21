@@ -11,7 +11,6 @@ export function getSeedFromAddress(address: any) {
         // @ts-ignore
         .match(/.{2}/g)
         .map((hexNoPrefix) => BigNumber.from('0x' + hexNoPrefix).toNumber())
-    console.log(array)
     const seed = JSON.parse(JSON.stringify(array));
     return seed;
 }

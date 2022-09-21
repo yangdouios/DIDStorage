@@ -16,6 +16,7 @@
     "@ceramicstudio/idx-constants": "^1.0.0",
     "@chakra-ui/react": "^2.3.4",
     "@rainbow-me/rainbowkit": "^0.6.0",
+    "antd": "^4.23.2",
     "dids": "^3.3.0",
     "ethers": "^5.0.0",
     "key-did-provider-ed25519": "^2.0.1",
@@ -23,7 +24,9 @@
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "wagmi": "^0.6.0"
+    "use-file-picker": "^1.5.1",
+    "wagmi": "^0.6.0",
+    "web3.storage": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",

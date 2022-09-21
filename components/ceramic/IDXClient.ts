@@ -9,6 +9,7 @@ interface  UserInfo{
     location:string,
     website:string,
     description:string
+    cids:[]
 }
 
 export class IDXClient {
@@ -31,6 +32,7 @@ export class IDXClient {
 
 
     async writeUserInfo(userInfo:UserInfo) {
+        console.log(userInfo)
         await this._webClient.idx.set('basicProfile', userInfo)
     }
 
@@ -38,11 +40,9 @@ export class IDXClient {
         await this._webClient.idx.merge("basicProfile", kv)
     }
 
-    async readUserInfo():Promise<{}> {
+    async readFiles():Promise<{}> {
         const result = await this._webClient.idx.get('basicProfile')
-        console.log("readUserInfo:" + result)
         // @ts-ignore
         return result
     }
-
 }
