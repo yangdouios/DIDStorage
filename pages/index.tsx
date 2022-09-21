@@ -135,16 +135,13 @@ const Home: NextPage = () => {
                         </Button>
                     }
                 </Flex>
-
+                <h1 className={styles.title}>
+                    Welcome to <a href="">IPFS/Filecoin</a> + <a href="">DID</a> +{' '}
+                    <a href="https://nextjs.org">DropBox!</a>
+                </h1>
                 {
                     isDisconnected && <h1 className={styles.title}>
                         Please connect <a href="">Wallet </a>{'first '}
-                    </h1>
-                }
-                {
-                    isConnected && <h1 className={styles.title}>
-                        Welcome to <a href="">IPFS/Filecoin</a> + <a href="">DID</a> +{' '}
-                        <a href="https://nextjs.org">DropBox!</a>
                     </h1>
                 }
 
@@ -194,7 +191,7 @@ const Home: NextPage = () => {
 
             <footer className={styles.footer}>
                 <a href="https://rainbow.me" target="_blank" rel="noopener noreferrer">
-                    Made with ❤️ by your frens at 🌈
+                    Made with ❤️DID & IPFS/Filecoin   at 🌈
                 </a>
             </footer>
         </div>

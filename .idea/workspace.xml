@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="add delete cid">
+    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="fix bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
@@ -86,7 +86,7 @@
       <updated>1663595878668</updated>
       <workItem from="1663595883058" duration="9648000" />
       <workItem from="1663679585246" duration="95000" />
-      <workItem from="1663679848190" duration="30655000" />
+      <workItem from="1663679848190" duration="31449000" />
     </task>
     <task id="LOCAL-00001" summary="add ceramic &amp; did &amp; 3dbox">
       <created>1663680316268</created>
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663772113013</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix bugs">
+      <created>1663772804412</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663772804415</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +163,7 @@
     <MESSAGE value="fixed useEffect looper &amp; did auth" />
     <MESSAGE value="build file index system based ceramic" />
     <MESSAGE value="add delete cid" />
-    <option name="LAST_COMMIT_MESSAGE" value="add delete cid" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
 </project>
