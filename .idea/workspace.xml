@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="build file index system based ceramic">
+    <list default="true" id="b5e5b32d-f567-4e6f-aa01-3aec944c315c" name="Default Changelist" comment="add delete cid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
@@ -48,7 +48,17 @@
       <recent name="E:\grant_code\didstorage\components" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -61,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -75,7 +86,7 @@
       <updated>1663595878668</updated>
       <workItem from="1663595883058" duration="9648000" />
       <workItem from="1663679585246" duration="95000" />
-      <workItem from="1663679848190" duration="29998000" />
+      <workItem from="1663679848190" duration="30655000" />
     </task>
     <task id="LOCAL-00001" summary="add ceramic &amp; did &amp; 3dbox">
       <created>1663680316268</created>
@@ -112,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663770826843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add delete cid">
+      <created>1663772113013</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663772113013</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +155,7 @@
     <MESSAGE value="fix useEffect looper &amp; did auth" />
     <MESSAGE value="fixed useEffect looper &amp; did auth" />
     <MESSAGE value="build file index system based ceramic" />
-    <option name="LAST_COMMIT_MESSAGE" value="build file index system based ceramic" />
+    <MESSAGE value="add delete cid" />
+    <option name="LAST_COMMIT_MESSAGE" value="add delete cid" />
   </component>
 </project>

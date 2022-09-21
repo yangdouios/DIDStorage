@@ -90,16 +90,14 @@ const Home: NextPage = () => {
     const deleteCid = async (v:any) =>{
         const deleteCid = v.cid;
         // @ts-ignore
-        let copyCids = []
+        let copyCids : any = []
         cids.forEach((cidJson)=>{
             const cid = cidJson['cid']
             if( deleteCid != cid){
                 copyCids.push(cidJson)
             }
         })
-        // @ts-ignore
         console.log(copyCids)
-        // @ts-ignore
         const result = {
             'affiliation' : copyCids
         }
@@ -171,13 +169,13 @@ const Home: NextPage = () => {
 
                                 </Box>
                                 {cids.map((reptile) => (
-                                    <ListItem w='100%' key={reptile.cid} >
+                                    <ListItem w='100%' key={reptile['cid']} >
                                         <Flex color='black'>
                                             <Text w='500px' color={'black'}>
-                                                {reptile.name}
+                                                {reptile['name']}
                                             </Text>
                                             <Text w='800px'  color={'black'}>
-                                                {reptile.cid}
+                                                {reptile['cid']}
                                             </Text>
 
                                             <Button  onClick={()=>{deleteCid(reptile)}} color={'black'}>
